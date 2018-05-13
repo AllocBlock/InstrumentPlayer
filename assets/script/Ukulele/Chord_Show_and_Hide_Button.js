@@ -12,7 +12,10 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-       
+        Arrow:{
+            type: cc.SpriteFrame,
+            default: []
+        },
     },
 
     // LIFE-CYCLE CALLBACKS:
@@ -20,8 +23,7 @@ cc.Class({
     // onLoad () {},
 
     start () {
-        // cc.log(this.node.width);
     },
-    
+
     // update (dt) {},
 });
