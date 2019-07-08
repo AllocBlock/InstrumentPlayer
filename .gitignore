@@ -73,3 +73,5 @@ quick_gen_project_*_autogen.sh.meta
 *.lnk
 *.bat
 mine/
+log.xlsx
+~$*
