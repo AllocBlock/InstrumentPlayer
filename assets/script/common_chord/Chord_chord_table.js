@@ -45,8 +45,6 @@ cc.Class({
 
         var button = this.node.getChildByName("Show_and_Hide_Button").getComponent(cc.Button);
         var buttonsprite = this.node.getChildByName("Show_and_Hide_Button").getComponent(cc.Sprite);
-            // button.enabled = 1;
-        this._loadButtonPic(tableState);
 
         this.node.on("event_button_clicked", function (buttonIndex){
             this._clickedButton(buttonIndex);              //监听选择事件
@@ -108,20 +106,25 @@ cc.Class({
             // 转换音调
             var chord = chordMapList[chordName];
             var fret = [];
-            fret[0] = parseInt(chord[0]) + 9;
-            fret[1] = parseInt(chord[1]) + 4;
-            fret[2] = parseInt(chord[2]);
-            fret[3] = parseInt(chord[3]) + 7;
+            for(var i = 0; i < window.instrumentInfo.stringsNum; i++){
+                fret[i] = parseInt(chord[i]) + window.instrumentInfo.stringsBasic[i];
+            }
+            // fret[0] = parseInt(chord[0]) + 9;
+            // fret[1] = parseInt(chord[1]) + 4;
+            // fret[2] = parseInt(chord[2]);
+            // fret[3] = parseInt(chord[3]) + 7;
             
-            cc.log("和弦", chordName, chord[0], " ", chord[1], " ", chord[2], " ", chord[3])
+            //cc.log("和弦", chordName, chord[0], " ", chord[1], " ", chord[2], " ", chord[3])
+            
             //播放
-            var i = 3;
+            var i = window.instrumentInfo.stringsNum - 1;
                 this.schedule(function(){  
                     cc.audioEngine.play(window.audioSet.uku[fret[i]], false, 1);
                     i--;
-                }, this.SweepDelayTime / 1000, 4);  
+                }, this.SweepDelayTime / 1000, window.instrumentInfo.stringsNum);  
                 
         },
+        
     _clickedButton: function (buttonIndex){
         var clickedButton = window.buttonList[buttonIndex];
         if (tableState == 0){ // 播放模式
@@ -162,19 +165,6 @@ cc.Class({
         
     },
 
-    _loadButtonPic: function (set) {
-        //set为0，改为上箭头；set为1,改为下箭头
-        set = set * 4;
-        var button = this.node.getChildByName("Show_and_Hide_Button").getComponent(cc.Button);
-        //var buttonsprite = this.node.getChildByName("Show_and_Hide_Button").getComponent(cc.Sprite);
-        //var atlas = button.Arrow;
-        //buttonsprite.spriteFrame = atlas[0 + set];
-        //button.normalSprite = atlas[0 + set];
-        //button.pressedSprite = atlas[1 + set];
-        //button.hoverSprite = atlas[2 + set];
-        //button.disabledSprite = atlas[3 + set];
-    },
-
     _pauseAllButton: function () {  // 面板运动时暂时禁用所有按钮
         var self = this;
         //暂时禁用
@@ -203,9 +193,6 @@ cc.Class({
             //移动面板
             var action = cc.moveBy(this.TableMoveTime, 0, this.node.height);
         }
-
-        //更改图片      
-        this._loadButtonPic(tableState);
         
         this.node.runAction(action);
         //暂时关闭交互

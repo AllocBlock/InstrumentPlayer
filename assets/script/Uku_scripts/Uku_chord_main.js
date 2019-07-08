@@ -8,9 +8,6 @@
 //  - [Chinese] https://docs.cocos.com/creator/manual/zh/scripting/life-cycle-callbacks.html
 //  - [English] https://www.cocos2d-x.org/docs/creator/manual/en/scripting/life-cycle-callbacks.html
 
-var stringsPos = [160, 54, -54, -160];
-var fretsPos = [84, 250, 400, 550, 690, 830, 965, 1090, 1220, 1336, 1448, 1560, 1666, 1762, 1862, 1946, 2030, 2114]
-
 cc.Class({
     extends: cc.Component,
 
@@ -34,10 +31,15 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    // onLoad () {},
+    onLoad () {
+        var instrumentInfo = {};
+        instrumentInfo.name = "Ukulele";
+        instrumentInfo.audioDir = "audio/Ukulele";
+        instrumentInfo.chordFile = "data/Ukulele";
+        instrumentInfo.stringsNum = 4;
+        instrumentInfo.stringsBasic = [9, 4, 0 ,7];
 
-    start () {
-
+        window.instrumentInfo = instrumentInfo;
     },
 
     // update (dt) {},

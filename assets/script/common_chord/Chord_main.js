@@ -22,6 +22,7 @@ var currentRow = 1;         // 初始化行数
 var currentMode = 1;        // 初始化为播放模式
 
 
+
 cc.Class({
     extends: cc.Component,
 
@@ -36,7 +37,7 @@ cc.Class({
         var self = this;
         
         // 载入和弦数据文件
-        cc.loader.loadRes("data/Ukulele",function(err, data){
+        cc.loader.loadRes(instrumentInfo.chordFile,function(err, data){
             if(err) {cc.error(err);}
             else {
                 window.chordFile = data;
@@ -46,7 +47,7 @@ cc.Class({
         // 载入音轨
         // 音频初始化
         window.audioSet = new Object();
-        cc.loader.loadResDir("audio/Ukulele", cc.AudioClip, function (err, clips){
+        cc.loader.loadResDir(instrumentInfo.audioDir, cc.AudioClip, function (err, clips){
                 window.audioSet.uku = clips;
             }
         );

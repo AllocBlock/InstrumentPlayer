@@ -17,7 +17,7 @@
         "__id__": 2
       },
       {
-        "__id__": 65
+        "__id__": 66
       }
     ],
     "_active": true,
@@ -44,8 +44,8 @@
     },
     "_scale": {
       "__type__": "cc.Vec3",
-      "x": 0.49148440361022955,
-      "y": 0.49148440361022955,
+      "x": 0.5814258098602295,
+      "y": 0.5814258098602295,
       "z": 1
     },
     "_quat": {
@@ -88,6 +88,9 @@
       },
       {
         "__id__": 64
+      },
+      {
+        "__id__": 65
       }
     ],
     "_prefab": null,
@@ -2559,6 +2562,16 @@
     "_id": "5atC71FFtJkY3rcNtdJrji"
   },
   {
+    "__type__": "e204f2ay9JHDZcQssRzqeWx",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true,
+    "_id": "43FiBHik5GKYE6aILy2uPx"
+  },
+  {
     "__type__": "1fb453qHL5LQ5bnTd1YCNbh",
     "_name": "",
     "_objFlags": 0,
@@ -2580,20 +2593,20 @@
     },
     "_children": [
       {
-        "__id__": 66
+        "__id__": 67
       }
     ],
     "_active": true,
     "_level": 0,
     "_components": [
       {
-        "__id__": 68
-      },
-      {
         "__id__": 69
       },
       {
         "__id__": 70
+      },
+      {
+        "__id__": 71
       }
     ],
     "_prefab": null,
@@ -2646,14 +2659,14 @@
     "_name": "bar",
     "_objFlags": 0,
     "_parent": {
-      "__id__": 65
+      "__id__": 66
     },
     "_children": [],
     "_active": true,
     "_level": 0,
     "_components": [
       {
-        "__id__": 67
+        "__id__": 68
       }
     ],
     "_prefab": null,
@@ -2706,7 +2719,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 66
+      "__id__": 67
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
@@ -2732,7 +2745,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 65
+      "__id__": 66
     },
     "_enabled": true,
     "_scrollView": null,
@@ -2741,7 +2754,7 @@
     "enableAutoHide": true,
     "autoHideTime": 1,
     "_N$handle": {
-      "__id__": 67
+      "__id__": 68
     },
     "_N$direction": 0,
     "_id": "4cDlu5MENM0pC5JJNItGtZ"
@@ -2751,7 +2764,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 65
+      "__id__": 66
     },
     "_enabled": true,
     "alignMode": 0,
@@ -2778,7 +2791,7 @@
     "_name": "",
     "_objFlags": 0,
     "node": {
-      "__id__": 65
+      "__id__": 66
     },
     "_enabled": true,
     "_srcBlendFactor": 770,
